@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-function BoillingVertict(props) {
+function BoilingVertict(props) {
     if(props.celsius > 100) {
-        return <p>The water would boil.</p>
+        return <p>Water would boil.</p>
     }
-    return <p>The water would not boil.</p>
+    return <p>Water would not boil.</p>
 }
 
 class Calculator extends Component {
@@ -12,16 +12,15 @@ class Calculator extends Component {
         super(props)
 
         this.state = {
-            temperature: ''  
-        }
+            temperature: ''
+        };
         this.handleChange = this.handleChange.bind(this);
-
     }
 
     handleChange(e) {
         this.setState({
             temperature: e.target.value
-        }); 
+        });
     }
 
     render() {
@@ -29,15 +28,15 @@ class Calculator extends Component {
         return (
             <fieldset>
                 <legend>Enter currently temperature.</legend>
-                <input 
+                <input
                     value={temperature}
                     onChange={this.handleChange}
                 />
-                <BoillingVertict
+                <BoilingVertict 
                     celsius={parseFloat(temperature)}
                 />
             </fieldset>
-        );
+        )
     }
 }
 
